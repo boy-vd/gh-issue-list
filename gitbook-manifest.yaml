@@ -1,0 +1,43 @@
+name: gh-issue-list
+title: GitHub Issue List
+organization: bvd
+visibility: private
+description: List GitHub issues
+externalLinks:
+    - label: GitHub Homepage
+      url: https://github.com
+summary: |
+    # Overview
+
+    The GitHub Issues integration allows to present an overview of GitHub issues in GitBook.
+
+    # How it works
+
+    After installing the GitHub Issues integration, you're able to insert an overview of open GitHub issues into your GitBook.
+
+    # Configure
+
+    You'll need to authorize with your GitHub Account in the integration's configuration page.
+script: ./src/index.tsx
+scopes: []
+blocks:
+    - id: github-issues-list
+      title: GitHub Issues
+      description: Insert an overview of GitHub issues
+      urlUnfurl:
+        - https://github.com/**
+configurations:
+    account:
+        properties:
+            oauth_credentials:
+                type: button
+                title: Connection
+                description: Authorization between GitHub and GitBook.
+                button_text: Authorize
+                callback_url: /oauth
+        required:
+            - oauth_credentials
+secrets:
+    CLIENT_ID: ${{ env.ISSUE_LIST_GITHUB_CLIENT_ID }}
+    CLIENT_SECRET: ${{ env.ISSUE_LIST_GITHUB_CLIENT_SECRET }}
+target: space

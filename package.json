@@ -1,0 +1,21 @@
+{
+    "name": "gh-issue-list",
+    "version": "0.1",
+    "private": true,
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "itty-router": "^3.0.12",
+        "@gitbook/runtime": "*",
+        "@gitbook/api": "*"
+    },
+    "devDependencies": {
+        "@gitbook/cli": "*",
+        "@gitbook/tsconfig": "*",
+        "@cloudflare/workers-types": "*"
+    },
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "check": "gitbook check",
+        "publish": "gitbook publish ."
+    }
+}
